@@ -1,0 +1,15 @@
+<h2>投稿一覧</h2>
+
+<% books.each do |book| %>
+
+<p>ユーザー画像</p>
+<span><%= image_tag book.user.get_profile_image, size: "100x100" %></span>
+<p>title</p>
+<span>
+  <%= link_to book_path(book.id) do %>
+    <%= book.title %>
+  <% end %>
+</span>
+<p>opnion</p>
+<span><%= book.body %></span>
+<% end %>
